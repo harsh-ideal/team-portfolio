@@ -47,7 +47,7 @@ const config: Config = {
           DEFAULT: '#f8fafc',
           100: '#f1f5f9',
           200: '#e2e8f0',
-          300: '#dddddd'
+          300: '#cccccc'
         }
       },
       fontSize: {

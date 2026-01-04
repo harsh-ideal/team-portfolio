@@ -31,7 +31,7 @@ export default function Navbar() {
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-dark/95 backdrop-blur-md shadow-lg'
-          : 'bg-dark/45 text-dark'
+          : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 py-4">
