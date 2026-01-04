@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Lexend } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+// Configure Lexend as a variable font
+const lexend = Lexend({
+  subsets: ['latin'],           // Add 'latin-ext' if you need extended characters
+  variable: '--font-lexend',    // CSS variable for Tailwind/custom use
+  display: 'swap',              // Better loading behavior
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://yourdevteam.com'),
@@ -67,8 +72,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={`${lexend.variable} scroll-smooth`}>
+      <body className="font-lexend antialiased bg-background text-foreground">
         <Navbar />
         <main>{children}</main>
         <Footer />

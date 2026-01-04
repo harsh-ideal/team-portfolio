@@ -50,6 +50,14 @@ const config: Config = {
           300: '#cccccc'
         }
       },
+      fontFamily: {
+        // This makes your `font-lexend` class work
+        lexend: ['var(--font-lexend)', 'sans-serif'],
+
+        // Optional: Make Lexend the default sans font (recommended!)
+        // Then you can just use `font-sans` everywhere instead of `font-lexend`
+        sans: ['var(--font-lexend)', 'system-ui', 'sans-serif'],
+      },
       fontSize: {
         'hero': ['4.5rem', { lineHeight: '1.1', fontWeight: '800' }],
         'section': ['3rem', { lineHeight: '1.2', fontWeight: '700' }],
@@ -92,4 +100,5 @@ const config: Config = {
   },
   plugins: [],
 }
+
 export default config

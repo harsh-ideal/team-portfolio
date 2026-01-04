@@ -30,18 +30,18 @@ export default function Navbar() {
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          ? 'bg-white shadow-md'
+          : ''
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="bg-gradient-primary p-2 rounded-lg group-hover:scale-110 transition">
-              <FaCode className="text-2xl text-light" />
+            <div className="bg-[#1C964D] p-2 rounded-lg group-hover:scale-110 transition">
+              <FaCode className="text-2xl text-white" />
             </div>
-            <span className="text-2xl font-display text-light">
+            <span className="text-2xl font-semibold text-gray-900">
               DevTeam
             </span>
           </Link>
@@ -52,10 +52,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-subheading transition-all ${
+                className={`font-medium transition-all ${
                   pathname === link.href
-                    ? 'text-accent'
-                    : 'text-light hover:text-accent'
+                    ? 'text-[#1C964D]'
+                    : 'text-gray-700 hover:text-[#1C964D]'
                 }`}
               >
                 {link.name}
@@ -63,7 +63,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="px-6 py-2 bg-gradient-primary text-light font-subheading rounded-lg hover:scale-105 transition"
+              className="px-6 py-2 bg-[#1C964D] text-white font-medium rounded-lg hover:bg-[#157A3D] hover:scale-105 transition-all shadow-sm"
             >
               Get Started
             </Link>
@@ -72,7 +72,8 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-light text-2xl"
+            className="md:hidden text-gray-900 text-2xl focus:outline-none"
+            aria-label="Toggle menu"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -80,16 +81,16 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-slide-down">
+          <div className="md:hidden mt-4 pb-4 animate-slide-down border-t border-gray-100 pt-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block py-3 font-subheading transition ${
+                className={`block py-3 font-medium transition ${
                   pathname === link.href
-                    ? 'text-accent'
-                    : 'text-light hover:text-accent'
+                    ? 'text-[#1C964D]'
+                    : 'text-gray-700 hover:text-[#1C964D]'
                 }`}
               >
                 {link.name}
@@ -98,7 +99,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block mt-4 px-6 py-2 bg-gradient-primary text-light font-subheading rounded-lg text-center hover:scale-105 transition"
+              className="block mt-4 px-6 py-2 bg-[#1C964D] text-white font-medium rounded-lg text-center hover:bg-[#157A3D] transition-all shadow-sm"
             >
               Get Started
             </Link>
